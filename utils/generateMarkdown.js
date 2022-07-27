@@ -1,21 +1,3 @@
-const licenseData = [
-  'None',
-            'Apache License 2.0',
-            'GNU General Public License v3.0',
-            'MIT License',
-            'BSD 2-Clause \"Simplified\" license',
-            'BSD 3-Clause \"New\" or \"Revised\" License',
-            'Boost Software License 1.0',
-            'Creative Commons Zero v1.0 Universal',
-            'Eclipse Public License 2.0',
-            'GNU Affero General Public License v3.0',
-            'GNU General Public License v2.0',
-            'GNU Lesser General Public License v2.1',
-            'Mozilla Public License',
-            'The Unlicense'
-  ,
-  [],
-]
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
@@ -133,31 +115,28 @@ function generateMarkdown(data) {
     tableOfContents += '## Table of Contents\n\n'
   }
   if (data.description){
-    tableOfContents += `[Description](description)\n\n`
+    tableOfContents += `[Description](#description)\n\n`
   }
   if (data.installation){
-    tableOfContents += `[Installation Instructions](installation)\n\n`
+    tableOfContents += `[Installation Instructions](#installation-instructions)\n\n`
   }
   if (data.usage){
-    tableOfContents += `[Usage Instructions](usage)\n\n`
+    tableOfContents += `[Usage Instructions](#usage-instructions)\n\n`
   }
   if (data.license !== 'None'){
-    tableOfContents += `[License](license)\n\n`
+    tableOfContents += `[License](#license)\n\n`
   }
   if (data.github){
-    tableOfContents += `[Github](github)\n\n`
+    tableOfContents += `[Github](#github)\n\n`
   }
   if (data.contribution){
-    tableOfContents += `[Contribution](contribution)\n\n`
+    tableOfContents += `[Contribution](#contribution)\n\n`
   }
   if (data.tests){
-    tableOfContents += `[Tests](tests)\n\n`
-  }
-  if (data.questions){
-    tableOfContents += `[Tests](tests)\n\n`
+    tableOfContents += `[Tests](#tests)\n\n`
   }
   if (data.emails){
-    tableOfContents += `[Questions](questions)\n\n`
+    tableOfContents += `[Questions](#questions)\n\n`
   }
 
 
@@ -178,7 +157,7 @@ function generateMarkdown(data) {
   }
   // generate description data.description
   if (data.description){
-    readmeString += `## Description\n\n${data.description}\n\n`
+    readmeString += `## Description\n\n${data.description}\n\n[Screenrecording](./screenrecording.mp4)\n\n`
   }
   // generate installation instructions
   if (data.installation){
@@ -222,60 +201,3 @@ function generateMarkdown(data) {
 
 module.exports = generateMarkdown;
 
-// !!!# <Your-Project-Title>
-// (License badge)
-
-// !!!## Description
-
-// Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-// - What was your motivation?
-// - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-// - What problem does it solve?
-// - What did you learn?
-
-// !!!## Table of Contents (Optional)
-
-// If your README is long, add a table of contents to make it easy for users to find what they need.
-
-// - [Installation](#installation)
-// - [Usage](#usage)
-// - [Credits](#credits)
-// - [License](#license)
-
-// !!!## Installation
-
-// What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
-
-// !!!## Usage
-
-// Provide instructions and examples for use. Include screenshots as needed.
-
-// To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-//     ```md
-//     ![alt text](assets/images/screenshot.png)
-//     ```
-
-
-// ## License
-
-// The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
-
-// ---
-
-// 🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-// ## Badges
-
-// ![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
-// Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
-// ## How to Contribute
-
-// If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
-
-// ## Tests
-
-// Go the extra mile and write tests for your application. Then provide examples on how to run them here.
